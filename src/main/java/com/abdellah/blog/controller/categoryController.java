@@ -9,8 +9,8 @@ import com.abdellah.blog.model.Category;
 import com.abdellah.blog.service.interfaces.CategoryService;
 import lombok.AllArgsConstructor;
 
-@RestController
-@RequestMapping("/blog/api/categories")
+@RestController // @RestController = @Controller + @ResponseBody, for returning JSON objects directly, without using a view resolver
+@RequestMapping("/blog/api/categories") 
 @AllArgsConstructor
 
 public class categoryController {
