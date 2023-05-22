@@ -1,12 +1,12 @@
-package com.abdellah.blog.initializer;
+package com.abdellah.blog.initialize;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-import com.abdellah.blog.initializer.enity.InitCategory;
-import com.abdellah.blog.initializer.enity.InitPost;
-import com.abdellah.blog.initializer.relationship.PostCategorySet;
+import com.abdellah.blog.initialize.enity.InitCategory;
+import com.abdellah.blog.initialize.enity.InitPost;
+import com.abdellah.blog.initialize.relationship.PostCategorySet;
 
 @Component
 @ComponentScan("com.abdellah.blog.initializer.enity") // Add the package containing InitPost

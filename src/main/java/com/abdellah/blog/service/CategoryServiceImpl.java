@@ -1,12 +1,14 @@
 package com.abdellah.blog.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import com.abdellah.blog.model.Category;
 import com.abdellah.blog.repository.CategoryRepository;
 import com.abdellah.blog.service.interfaces.CategoryService;
+
 import lombok.AllArgsConstructor;
 
 @Service
@@ -32,13 +34,16 @@ public class CategoryServiceImpl implements CategoryService {
   }
 
   @Override
-  public void delete(Long id) {
-    throw new UnsupportedOperationException("Unimplemented method 'delete'");
+  public void deleteById(Long id) {
+    categoryRepository.deleteById(id);
   }
 
   @Override
-  public Category find(Long id) {
-    throw new UnsupportedOperationException("Unimplemented method 'find'");
+  public Optional<Category> findById(Long id) {
+      return categoryRepository.findById(id);
   }
+
+
+
   
 }

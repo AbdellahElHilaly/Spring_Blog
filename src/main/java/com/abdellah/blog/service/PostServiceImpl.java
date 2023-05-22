@@ -1,6 +1,7 @@
 package com.abdellah.blog.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -12,17 +13,18 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class PostServiceImpl implements PostService{
+public class PostServiceImpl implements PostService {
 
   private PostRepository postRepository;
+
   @Override
   public List<Post> all() {
     return postRepository.findAll().stream().toList();
   }
 
   @Override
-  public Post Store(Post post) {
-    throw new UnsupportedOperationException("Unimplemented method 'Store'");
+  public Post store(Post post) {
+    return postRepository.save(post);
   }
 
   @Override
@@ -31,13 +33,14 @@ public class PostServiceImpl implements PostService{
   }
 
   @Override
-  public void delete(Long id) {
-    throw new UnsupportedOperationException("Unimplemented method 'delete'");
+  public void delete(Post post) {
+    postRepository.delete(post);
   }
 
   @Override
-  public Post find(Long id) {
-    throw new UnsupportedOperationException("Unimplemented method 'find'");
+  public Optional<Post> findById(Long id) {
+    return postRepository.findById(id);
   }
-  
 }
+
+

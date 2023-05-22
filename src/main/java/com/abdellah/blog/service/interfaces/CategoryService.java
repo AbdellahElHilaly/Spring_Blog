@@ -2,8 +2,10 @@ package com.abdellah.blog.service.interfaces;
 
 
 
-import com.abdellah.blog.model.Category;
 import java.util.List;
+import java.util.Optional;
+
+import com.abdellah.blog.model.Category;
 
 public interface CategoryService {
   
@@ -13,9 +15,10 @@ public interface CategoryService {
 
   Category update(Long id, Category category);
 
-  void delete(Long id);
+  void deleteById(Long id);
 
-  Category find(Long id);
+  Optional<Category> findById(Long id);
+
 
 
 }

@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private long id;
 
   private String title;
   private String content;

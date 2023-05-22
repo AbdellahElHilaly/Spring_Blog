@@ -1,10 +1,10 @@
-package com.abdellah.blog.initializer.enity;
+package com.abdellah.blog.initialize.enity;
 
-import com.abdellah.blog.model.Post;
 import com.github.javafaker.Faker;
-import org.springframework.stereotype.Component;
-
+import com.abdellah.blog.model.Post;
 import com.abdellah.blog.repository.PostRepository;
+
+import org.springframework.stereotype.Component;
 
 @Component
 public class InitPost  {

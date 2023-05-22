@@ -1,9 +1,9 @@
-package com.abdellah.blog.initializer.enity;
+package com.abdellah.blog.initialize.enity;
 
-import com.abdellah.blog.model.Category;
-import com.abdellah.blog.repository.CategoryRepository;
 import org.springframework.stereotype.Component;
 import com.github.javafaker.Faker;
+import com.abdellah.blog.model.Category;
+import com.abdellah.blog.repository.CategoryRepository;
 
 @Component
 public class InitCategory {
