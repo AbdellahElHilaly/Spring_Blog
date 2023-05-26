@@ -24,8 +24,8 @@ public class CategoryServiceImpl implements CategoryService {
   }
 
   @Override
-  public Category Store(Category category) {
-    throw new UnsupportedOperationException("Unimplemented method 'Store'");
+  public Category save(Category category) {
+    return categoryRepository.save(category);
   }
 
   @Override

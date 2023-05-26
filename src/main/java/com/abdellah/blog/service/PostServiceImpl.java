@@ -10,8 +10,9 @@ import com.abdellah.blog.repository.PostRepository;
 import com.abdellah.blog.service.interfaces.PostService;
 
 import lombok.AllArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 
-@Service
+@Service @Validated
 @AllArgsConstructor
 public class PostServiceImpl implements PostService {
 
@@ -23,7 +24,7 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  public Post store(Post post) {
+  public Post save(Post post) {
     return postRepository.save(post);
   }
 
@@ -41,6 +42,7 @@ public class PostServiceImpl implements PostService {
   public Optional<Post> findById(Long id) {
     return postRepository.findById(id);
   }
+
 }
 
 

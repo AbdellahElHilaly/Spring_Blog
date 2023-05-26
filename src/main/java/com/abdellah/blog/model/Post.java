@@ -10,9 +10,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 
-@Data
-@Entity
+
+@Data @Validated @Entity
+
 @Table(name = "posts")
 @NoArgsConstructor
 public class Post {
@@ -34,5 +36,6 @@ public class Post {
 
 
 }
+
 
 

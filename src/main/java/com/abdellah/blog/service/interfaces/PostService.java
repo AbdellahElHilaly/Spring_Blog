@@ -4,14 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import com.abdellah.blog.model.Post;
+import org.springframework.validation.annotation.Validated;
 
-
+@Validated
 public interface PostService {
   
 
   List<Post> all();
 
-  Post store(Post post);
+  Post save(Post post);
 
   Post update(Long id, Post post);
 

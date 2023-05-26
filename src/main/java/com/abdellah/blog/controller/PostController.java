@@ -3,25 +3,20 @@ package com.abdellah.blog.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import com.abdellah.blog.model.Post;
 import com.abdellah.blog.service.interfaces.PostService;
 
 import lombok.AllArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
-@RestController
-@RequestMapping("/blog/api/posts")
-@AllArgsConstructor
-@ControllerAdvice
+
+@RequestMapping("/blog/api/posts") @RestController @AllArgsConstructor @ControllerAdvice @Validated
 
 public class PostController {
 
@@ -33,7 +28,7 @@ public class PostController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Post> show(@PathVariable Long id) {
+  public ResponseEntity<Post> show(@PathVariable @Min(value = 80) Long id) {
     return postService.findById(id)
         .map(ResponseEntity::ok)
         .orElse(ResponseEntity.notFound().build());
@@ -47,13 +42,20 @@ public class PostController {
   }
 
   @PostMapping
-  public Post store(@RequestBody Post post) {
-    // return ResponseEntity.ok(postService.store(post));
-    return post;
+  public ResponseEntity<Post> store(@Valid Post post) {
+    return ResponseEntity.ok(postService.save(post));
   }
 
 
+
 }
+
+/*
+
+ */
+
+
+
 
 
 

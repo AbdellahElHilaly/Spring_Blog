@@ -11,7 +11,7 @@ public interface CategoryService {
   
   List<Category> all();
 
-  Category Store(Category category);
+  Category save(Category category);
 
   Category update(Long id, Category category);
 

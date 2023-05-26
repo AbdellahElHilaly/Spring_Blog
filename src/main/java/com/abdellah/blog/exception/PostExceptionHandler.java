@@ -1,4 +1,4 @@
-package com.abdellah.blog.error;
+package com.abdellah.blog.exception;
 
 import java.util.NoSuchElementException;
 
